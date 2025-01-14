@@ -21,13 +21,17 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+                "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+
             ],
             "scripts": []
           },
@@ -79,6 +83,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+                            "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -92,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d2825843-2bb0-4921-9198-45365fd3a7a1"
   }
 }

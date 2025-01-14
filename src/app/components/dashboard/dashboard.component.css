@@ -1,0 +1,41 @@
+.widget-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.dashboard-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 567px) {
+    .dashboard-toolbar {
+        flex-direction: column;
+        align-items: start;
+        height: 106px;
+    }
+
+    .widget-header-title {
+        padding-top: 8px;
+    }
+
+    .widget-header-box {
+        padding-bottom: 14px;
+    }
+}
+
+.image {
+    width: 50px;
+    position: relative;
+    height: 36px;
+    top: 6px;
+}
+
+.image-table {
+    height: 47px;
+    width: 50px;
+    position: relative;
+    top: 6px;
+}

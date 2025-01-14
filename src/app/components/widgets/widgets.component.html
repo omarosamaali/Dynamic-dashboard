@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ type | titlecase }}</mat-card-title>
+        <button mat-icon-button (click)="remove.emit()">
+            <img src="https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-cross-icon-png-image_960976.jpg"
+                alt="">
+        </button>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngIf="typeof data === 'string'">{{ data }}</div>
+        <div *ngIf="isArray(data)">{{ data.join(', ') }}</div>
+        <pre *ngIf="typeof data === 'object' && !isArray(data)">{{ data | json }}</pre>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,20 @@
+<mat-toolbar class="dashboard-toolbar" color="primary">
+    <span class="widget-header-title">Dynamic Dashboard</span>
+    <div class="widget-header-box">
+        <button mat-button (click)="addWidget('chart')">
+            <img class="image" src="../../../assets/charts.png" alt="">
+        </button>
+        <button mat-button (click)="addWidget('table')">
+            <img class="image-table" src="../../../assets/tables.png" alt="">
+        </button>
+        <button mat-button (click)="addWidget('text')">
+            <img class="image-table" src="../../../assets/text.png" alt="">
+        </button>
+    </div>
+</mat-toolbar>
+
+<div cdkDropList (cdkDropListDropped)="onDrop($event)" class="widget-container">
+    <div *ngFor="let widget of widgets; let i = index" cdkDrag>
+        <app-widget [type]="widget.type" [data]="widget.data" (remove)="removeWidget(i)"></app-widget>
+    </div>
+</div>
