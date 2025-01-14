@@ -14,25 +14,7 @@ import { Chart } from 'chart.js/auto';
     MatButtonModule,
     CommonModule,
   ],
-  template: `
-    <mat-card>
-      <mat-card-header class="widget-header">
-        <mat-card-title>{{ type | titlecase }}</mat-card-title>
-        <button mat-icon-button (click)="remove.emit()">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlVaPw_t7b8V7QDBdpWjOOzatwnbijnbnzsQ&s" alt="">
-        </button>
-      </mat-card-header>
-      <mat-card-content>
-        <div *ngIf="type === 'chart'" style="width: 100%; height: 300px;">
-          <canvas #chartCanvas></canvas>
-        </div>
-        <div *ngIf="type === 'text'">{{ data }}</div>
-        <div *ngIf="type === 'table' && isArray(data)">
-          <div *ngFor="let row of data">{{ row }}</div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  `
+  templateUrl: './widgets.component.html'
 })
 export class WidgetComponent implements OnInit, OnDestroy {
   @Input() type!: string;
